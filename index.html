@@ -77,14 +77,14 @@
 		</div>
 		<div class="stars" style="position: relative; margin-top: 12px; height: 23px;">
 			<div style="position: absolute; top: 0; left: 0;">
-				<div class="star star-1"></div>
+				<div class="star star-1 active"></div>
 				<div class="star star-2"></div>
 				<div class="star star-3"></div>
 				<div class="star star-4"></div>
 				<div class="star star-5"></div>
 			</div>
 			<div class="stars-text" style="position: absolute; top: 0; left: 120px;">
-				<div style="margin-top: -3px; font-size: 13px; color: #7c7c7c; font-weight: 700;">0 баллов</div>
+				<div style="margin-top: -3px; font-size: 13px; color: #7c7c7c; font-weight: 700;">1 балл</div>
 			</div>
 		</div>
 		<div position="relative; margin-top: 10px;">
@@ -108,11 +108,12 @@
 					case "star-3": $('.stars-text div').html('3 балла'); break;
 					case "star-4": $('.stars-text div').html('4 балла'); break;
 					case "star-5": $('.stars-text div').html('5 баллов'); break;
-					default: $('.stars-text div').html('0 баллов');
+					default: $('.stars-text div').html('1 балл');
 				}
 			}, function() {
 				$(this).removeClass('active');
 				$(this).prevAll().removeClass('active');
+				$('.star:first-child').addClass('active');
 				if ($('.star').hasClass('choosen')) {
 					var starClasses = $('.star.choosen').last().attr('class').split(" ");
 					var starNumber = starClasses[1];
@@ -122,10 +123,10 @@
 						case "star-3": $('.stars-text div').html('3 балла'); break;
 						case "star-4": $('.stars-text div').html('4 балла'); break;
 						case "star-5": $('.stars-text div').html('5 баллов'); break;
-						default: $('.stars-text div').html('0 баллов');
+						default: $('.stars-text div').html('1 балл');
 					}
 				} else{
-					$('.stars-text div').html('0 баллов');
+					$('.stars-text div').html('1 балл');
 				};
 		});
 		$('.star').click(
@@ -141,7 +142,7 @@
 					case "star-3": $('.stars-text div').html('3 балла'); break;
 					case "star-4": $('.stars-text div').html('4 балла'); break;
 					case "star-5": $('.stars-text div').html('5 баллов'); break;
-					default: $('.stars-text div').html('0 баллов');
+					default: $('.stars-text div').html('1 балл');
 				}
 			});
 	</script>
