@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head lang="ru">
+	<title>Yell widget 9</title>
+	<meta charset="utf-8">
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+</head>
+<body style="margin: 0; font-family: Roboto; width: 240px; ">
+	<style type="text/css">
+		.star {
+		   margin: ;
+		   position: relative;
+		   display: block;
+		   color: red;
+		   float: left;
+		   width: 0px;
+		   height: 0px;
+		   cursor: pointer;
+		   border-right:  11px solid transparent;
+		   border-bottom: 8px  solid #d2d2d2;
+		   border-left:   11px solid transparent;
+		   -moz-transform:    rotate(35deg);
+		   -webkit-transform: rotate(35deg);
+		   -ms-transform:     rotate(35deg);
+		   -o-transform:      rotate(35deg);
+		}
+		.star:before {
+		   border-bottom: 8px solid #d2d2d2;
+		   border-left: 4px solid transparent;
+		   border-right: 4px solid transparent;
+		   position: absolute;
+		   height: 0;
+		   width: 0;
+		   top: -4px;
+		   left: -7px;
+		   display: block;
+		   content: '';
+		   -webkit-transform: rotate(-35deg);
+		   -moz-transform:    rotate(-35deg);
+		   -ms-transform:     rotate(-35deg);
+		   -o-transform:      rotate(-35deg);
+		   
+		}
+		.star:after {
+		   position: absolute;
+		   display: block;
+		   color: red;
+		   top: 0;
+		   left: -11px;
+		   width: 0px;
+		   height: 0px;
+		   border-right: 11px solid transparent;
+		   border-bottom: 8px solid #d2d2d2;
+		   border-left: 11px solid transparent;
+		   -webkit-transform: rotate(-70deg);
+		   -moz-transform:    rotate(-70deg);
+		   -ms-transform:     rotate(-70deg);
+		   -o-transform:      rotate(-70deg);
+		   content: '';
+		}
+		/*.star:hover, .star:hover:before, .star:hover:after{
+			border-bottom-color: #F04C49;
+		}*/
+		.active, .active:before, .active:after{
+			border-bottom-color: #F04C49;
+		}
+		.choosen, .choosen:before, .choosen:after{
+			border-bottom-color: #F04C49;
+		}
+	</style>
+	<div style="background-color: #fff; padding: 12px; border-radius: 3px; height: 226px;">
+		<div style="position: relative; height: 16px;">
+			<a style="position: absolute; top: 0; right: 0;" href="#"><img src="https://img-fotki.yandex.ru/get/15573/311645665.0/0_1227f0_a208e51b_orig.png" width="74" height="16" border="0" title="Yell.ru" alt="Yell.ru"/></a>
+		</div>
+		<div style="position: relative; margin-top: 12px;">
+			<h2 style="color: #7c7c7c; font-weight: 700; font-size: 16px; margin: 0; padding: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; height: 16px;">Стоматология «Столица»</h2>
+		</div>
+		<div class="stars" style="position: relative; margin-top: 12px; height: 23px;">
+			<div style="position: absolute; top: 0; left: 0;">
+				<div class="star star-1"></div>
+				<div class="star star-2"></div>
+				<div class="star star-3"></div>
+				<div class="star star-4"></div>
+				<div class="star star-5"></div>
+			</div>
+			<div class="stars-text" style="position: absolute; top: 0; left: 120px;">
+				<div style="margin-top: -3px; font-size: 13px; color: #7c7c7c; font-weight: 700;">0 баллов</div>
+			</div>
+		</div>
+		<div position="relative; margin-top: 10px;">
+			<form action="#" method="get">
+				<textarea style="border: 1px solid #D2D2D2; padding: 8px; color: #7c7c7c; font-weight: 400; font-size: 12px; width: 198px; resize: none; outline-color: #d2d2d2; height: 91px;" placeholder="Ваш отзыв"></textarea>
+				<input style="margin-top: 4px; display: block; width: 122px; height: 30px; border-radius: 3px; background-color: #F04C49; color: #fff; text-align: center; border: none; padding: 0; cursor: pointer;" type="submit" value="Отправить">
+			</form>
+		</div>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script type="text/javascript">
+		$('.star').hover(
+			function() {
+				$(this).addClass('active');
+				$(this).prevAll().addClass('active');
+				var starClasses = $(this).attr('class').split(" ");
+				var starNumber = starClasses[1];
+				switch (starNumber) {
+					case "star-1": $('.stars-text div').html('1 балл'); break;
+					case "star-2": $('.stars-text div').html('2 балла'); break;
+					case "star-3": $('.stars-text div').html('3 балла'); break;
+					case "star-4": $('.stars-text div').html('4 балла'); break;
+					case "star-5": $('.stars-text div').html('5 баллов'); break;
+					default: $('.stars-text div').html('0 баллов');
+				}
+			}, function() {
+				$(this).removeClass('active');
+				$(this).prevAll().removeClass('active');
+				if ($('.star').hasClass('choosen')) {
+					var starClasses = $('.star.choosen').attr('class').split(" ");
+					var starNumber = starClasses[1];
+					switch (starNumber) {
+						case "star-1": $('.stars-text div').html('1 балл'); break;
+						case "star-2": $('.stars-text div').html('2 балла'); break;
+						case "star-3": $('.stars-text div').html('3 балла'); break;
+						case "star-4": $('.stars-text div').html('4 балла'); break;
+						case "star-5": $('.stars-text div').html('5 баллов'); break;
+						default: $('.stars-text div').html('0 баллов');
+					}
+				} else{
+					$('.stars-text div').html('0 баллов');
+				};
+		});
+		$('.star').click(
+			function() {
+				$('.star').removeClass('choosen');
+				$(this).addClass('choosen');
+				$(this).prevAll().addClass('choosen');
+				var starClasses = $(this).attr('class').split(" ");
+				var starNumber = starClasses[1];
+				switch (starNumber) {
+					case "star-1": $('.stars-text div').html('1 балл'); break;
+					case "star-2": $('.stars-text div').html('2 балла'); break;
+					case "star-3": $('.stars-text div').html('3 балла'); break;
+					case "star-4": $('.stars-text div').html('4 балла'); break;
+					case "star-5": $('.stars-text div').html('5 баллов'); break;
+					default: $('.stars-text div').html('0 баллов');
+				}
+			});
+	</script>
+</body>
+</html>
