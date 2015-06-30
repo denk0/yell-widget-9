@@ -6,145 +6,255 @@
 	<link href='http://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 </head>
 <body style="margin: 0; font-family: Roboto; width: 240px; ">
-	<style type="text/css">
-		.star {
-		   margin: ;
-		   position: relative;
-		   display: block;
-		   color: red;
-		   float: left;
-		   width: 0px;
-		   height: 0px;
-		   cursor: pointer;
-		   border-right:  11px solid transparent;
-		   border-bottom: 8px  solid #d2d2d2;
-		   border-left:   11px solid transparent;
-		   -moz-transform:    rotate(35deg);
-		   -webkit-transform: rotate(35deg);
-		   -ms-transform:     rotate(35deg);
-		   -o-transform:      rotate(35deg);
-		}
-		.star:before {
-		   border-bottom: 9px solid #d2d2d2;
-		   border-left: 4px solid transparent;
-		   border-right: 4px solid transparent;
-		   position: absolute;
-		   height: 0;
-		   width: 0;
-		   top: -5px;
-		   left: -7px;
-		   display: block;
-		   content: '';
-		   -webkit-transform: rotate(-35deg);
-		   -moz-transform:    rotate(-35deg);
-		   -ms-transform:     rotate(-35deg);
-		   -o-transform:      rotate(-35deg);
-		   
-		}
-		.star:after {
-		   position: absolute;
-		   display: block;
-		   color: red;
-		   top: 0;
-		   left: -11px;
-		   width: 0px;
-		   height: 0px;
-		   border-right: 11px solid transparent;
-		   border-bottom: 8px solid #d2d2d2;
-		   border-left: 11px solid transparent;
-		   -webkit-transform: rotate(-70deg);
-		   -moz-transform:    rotate(-70deg);
-		   -ms-transform:     rotate(-70deg);
-		   -o-transform:      rotate(-70deg);
-		   content: '';
-		}
-		/*.star:hover, .star:hover:before, .star:hover:after{
-			border-bottom-color: #F04C49;
-		}*/
-		.active, .active:before, .active:after{
-			border-bottom-color: #F04C49;
-		}
-		.choosen, .choosen:before, .choosen:after{
-			border-bottom-color: #F04C49;
-		}
-	</style>
-	<div style="background-color: #fff; padding: 12px; border-radius: 3px; height: 226px;">
-		<div style="position: relative; height: 16px;">
-			<a style="position: absolute; top: 0; right: 0;" href="#"><img src="https://img-fotki.yandex.ru/get/15573/311645665.0/0_1227f0_a208e51b_orig.png" width="74" height="16" border="0" title="Yell.ru" alt="Yell.ru"/></a>
-		</div>
-		<div style="position: relative; margin-top: 12px;">
-			<a href="#" style="text-decoration: none; color: #7c7c7c; font-weight: 700; font-size: 16px; margin: 0; padding: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; height: 16px;">Стоматология «Столица»</a>
-		</div>
-		<div class="stars" style="position: relative; margin-top: 8px; height: 23px;">
-			<div style="position: absolute; top: 0; left: 0;">
-				<div class="star star-1 active"></div>
-				<div class="star star-2"></div>
-				<div class="star star-3"></div>
-				<div class="star star-4"></div>
-				<div class="star star-5"></div>
+	<div class="yell_widget">
+		<link href='http://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+		<style type="text/css">
+			*, *:before, *:after{
+				-webkit-box-sizing: border-box;
+				    -moz-box-sizing: border-box;
+				         box-sizing: border-box;
+			}
+			div.yell_widget a{
+				font-weight: 700 !important;
+				text-decoration: none !important;
+			}
+			div.yell_widget{
+				width: 240px !important;
+				height: 250px !important;
+				font-family: Roboto !important;
+				font-weight: 400 !important;
+				background-color: #FFF !important;
+				-webkit-border-radius: 5px !important;
+				        border-radius: 5px !important;
+				border: none !important;
+				padding: 12px !important;
+				position: relative !important;
+				outline: none !important;
+				display: inline-block !important;
+			}
+			.yell-star {
+			   position: relative;
+			   display: block;
+			   color: red;
+			   float: left;
+			   width: 0px;
+			   height: 0px;
+			   cursor: pointer;
+			   border-right:  11px solid transparent;
+			   border-bottom: 8px  solid #d2d2d2;
+			   border-left:   11px solid transparent;
+			   -moz-transform:    rotate(35deg);
+			   -webkit-transform: rotate(35deg);
+			   -ms-transform:     rotate(35deg);
+			   -o-transform:      rotate(35deg);
+			}
+			.yell-star:before {
+			   border-bottom: 9px solid #d2d2d2;
+			   border-left: 4px solid transparent;
+			   border-right: 4px solid transparent;
+			   position: absolute;
+			   height: 0;
+			   width: 0;
+			   top: -5px;
+			   left: -7px;
+			   display: block;
+			   content: '';
+			   -webkit-transform: rotate(-35deg);
+			   -moz-transform:    rotate(-35deg);
+			   -ms-transform:     rotate(-35deg);
+			   -o-transform:      rotate(-35deg);
+			   
+			}
+			.yell-star:after {
+			   position: absolute;
+			   display: block;
+			   color: red;
+			   top: 0;
+			   left: -11px;
+			   width: 0px;
+			   height: 0px;
+			   border-right: 11px solid transparent;
+			   border-bottom: 8px solid #d2d2d2;
+			   border-left: 11px solid transparent;
+			   -webkit-transform: rotate(-70deg);
+			   -moz-transform:    rotate(-70deg);
+			   -ms-transform:     rotate(-70deg);
+			   -o-transform:      rotate(-70deg);
+			   content: '';
+			}
+			div.yell_widget .yell-logo{
+				position: absolute !important;
+				display: inline-block !important;
+				top: 12px !important;
+				right: 12px !important;
+				width: 74px !important;
+				height: 16px !important;
+				float: none !important;
+				padding: 0 !important;
+				margin: 0 !important;
+				outline: none !important;
+				margin-bottom: 20px !important;
+			}
+			div.yell_widget .yell-company-name{
+				display: inline-block !important;
+				text-decoration: none !important;
+				text-transform: none !important;
+				font-size: 16px !important;
+				color: #7c7c7c !important;
+				font-weight: 700 !important;
+				margin: 0 !important;
+				padding: 0 !important;
+				margin-top: 30px !important;
+				float: none !important;
+				height: 16px !important;
+				overflow: hidden !important;
+				position: relative !important;
+				top: 0 !important;
+				left: 0 !important;
+				white-space: nowrap !important;
+				text-overflow: ellipsis !important;
+				width: 200px !important;
+			}
+			div.yell_widget .yell-stars-text{
+				position: absolute !important;
+				top: -3px !important;
+				left: 120px !important;
+				font-size: 13px !important;
+				color: #7c7c7c !important;
+				font-weight: 700 !important;
+				display: inline-block !important;
+				text-decoration: none !important;
+				text-transform: none !important;
+				line-height: 13px !important;
+			}
+			div.yell_widget .yell-stars{
+				position: relative !important;
+				margin: 0 !important;
+				padding: 0 !important;
+				margin-top: 8px !important;
+				height: 23px !important;
+				top: 0 !important;
+				left: 0 !important;
+				float: none !important;
+				display: block !important;
+			}
+			div.yell_widget .yell-form{
+				padding: 0 !important;
+				margin: 0 !important;
+				position: relative !important;
+				top: 0 !important;
+				left: 0 !important;
+				display: block !important;
+			}
+			div.yell_widget .yell-form .yell-textarea{
+				border: 1px solid #d2d2d2 !important;
+				-webkit-border-radius: 3px !important;
+				        border-radius: 3px !important;
+				padding: 8px !important;
+				color: #7c7c7c !important;
+				font-weight: 400 !important;
+				font-size: 12px !important;
+				width: 100% !important;
+				resize: none !important;
+				outline-color: #d2d2d2 !important;
+				height: 108px !important;
+			}
+			div.yell_widget .yell-form .yell-submit{
+				margin-top: 3px !important; 
+				display: block !important;
+				width: 122px !important; 
+				height: 30px !important; 
+				border-radius: 3px !important; 
+				background-color: #F04C49 !important; 
+				color: #fff !important; 
+				text-align: center !important; 
+				border: none !important; 
+				padding: 0 !important; 
+				cursor: pointer !important;
+			}
+			.yell-active, .yell-active:before, .yell-active:after{
+				border-bottom-color: #F04C49;
+			}
+			.yell-choosen, .yell-choosen:before, .yell-choosen:after{
+				border-bottom-color: #F04C49;
+			}
+		</style>
+		<a class="yell-logo" href="#">
+			<img src="https://img-fotki.yandex.ru/get/15573/311645665.0/0_1227f0_a208e51b_orig.png" width="74" height="16" border="0" title="Yell.ru" alt="Yell.ru"/>
+		</a>
+		<a class="yell-company-name" href="#">Стоматология «Столица»</a>
+		<div class="yell-stars">
+			<div>
+				<div class="yell-star yell-star-1 yell-active"></div>
+				<div class="yell-star yell-star-2"></div>
+				<div class="yell-star yell-star-3"></div>
+				<div class="yell-star yell-star-4"></div>
+				<div class="yell-star yell-star-5"></div>
 			</div>
-			<div class="stars-text" style="position: absolute; top: 0; left: 120px;">
-				<div style="margin-top: -3px; font-size: 13px; color: #7c7c7c; font-weight: 700;">1 балл</div>
+			<div class="yell-stars-text" style="position: absolute; top: 0; left: 120px;">
+				1 балл
 			</div>
 		</div>
-		<div position="relative; margin-top: 18px;">
-			<form action="#" method="get">
-				<textarea style="border: 1px solid #D2D2D2; border-radius: 3px; padding: 8px; color: #7c7c7c; font-weight: 400; font-size: 12px; width: 198px; resize: none; outline-color: #d2d2d2; height: 91px;" placeholder="Ваш отзыв"></textarea>
-				<input style="margin-top: 4px; display: block; width: 122px; height: 30px; border-radius: 3px; background-color: #F04C49; color: #fff; text-align: center; border: none; padding: 0; cursor: pointer;" type="submit" value="Отправить">
-			</form>
-		</div>
-	</div>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<script type="text/javascript">
-		$('.star').hover(
-			function() {
-				$(this).addClass('active');
-				$(this).prevAll().addClass('active');
-				var starClasses = $(this).attr('class').split(" ");
-				var starNumber = starClasses[1];
-				switch (starNumber) {
-					case "star-1": $('.stars-text div').html('1 балл'); break;
-					case "star-2": $('.stars-text div').html('2 балла'); break;
-					case "star-3": $('.stars-text div').html('3 балла'); break;
-					case "star-4": $('.stars-text div').html('4 балла'); break;
-					case "star-5": $('.stars-text div').html('5 баллов'); break;
-					default: $('.stars-text div').html('1 балл');
-				}
-			}, function() {
-				$(this).removeClass('active');
-				$(this).prevAll().removeClass('active');
-				$('.star:first-child').addClass('active');
-				if ($('.star').hasClass('choosen')) {
-					var starClasses = $('.star.choosen').last().attr('class').split(" ");
+		<form class="yell-form" action="#" method="get">
+			<textarea class="yell-textarea" placeholder="Ваш отзыв"></textarea>
+			<input class="yell-submit" type="submit" value="Отправить">
+		</form>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				console.log('ready');
+				$('.yell-star').hover(
+				function() {
+					$(this).addClass('yell-active');
+					$(this).prevAll().addClass('yell-active');
+					var starClasses = $(this).attr('class').split(" ");
 					var starNumber = starClasses[1];
 					switch (starNumber) {
-						case "star-1": $('.stars-text div').html('1 балл'); break;
-						case "star-2": $('.stars-text div').html('2 балла'); break;
-						case "star-3": $('.stars-text div').html('3 балла'); break;
-						case "star-4": $('.stars-text div').html('4 балла'); break;
-						case "star-5": $('.stars-text div').html('5 баллов'); break;
-						default: $('.stars-text div').html('1 балл');
+						case "yell-star-1": $('.yell-stars-text').html('1 балл'); break;
+						case "yell-star-2": $('.yell-stars-text').html('2 балла'); break;
+						case "yell-star-3": $('.yell-stars-text').html('3 балла'); break;
+						case "yell-star-4": $('.yell-stars-text').html('4 балла'); break;
+						case "yell-star-5": $('.yell-stars-text').html('5 баллов'); break;
+						default: $('.yell-stars-text').html('1 балл');
 					}
-				} else{
-					$('.stars-text div').html('1 балл');
-				};
-		});
-		$('.star').click(
-			function() {
-				$('.star').removeClass('choosen');
-				$(this).addClass('choosen');
-				$(this).prevAll().addClass('choosen');
-				var starClasses = $(this).attr('class').split(" ");
-				var starNumber = starClasses[1];
-				switch (starNumber) {
-					case "star-1": $('.stars-text div').html('1 балл'); break;
-					case "star-2": $('.stars-text div').html('2 балла'); break;
-					case "star-3": $('.stars-text div').html('3 балла'); break;
-					case "star-4": $('.stars-text div').html('4 балла'); break;
-					case "star-5": $('.stars-text div').html('5 баллов'); break;
-					default: $('.stars-text div').html('1 балл');
-				}
+				}, function() {
+					$(this).removeClass('yell-active');
+					$(this).prevAll().removeClass('yell-active');
+					$('.yell-star:first-child').addClass('yell-active');
+					if ($('.yell-star').hasClass('yell-choosen')) {
+						var starClasses = $('.yell-star.choosen').last().attr('class').split(" ");
+						var starNumber = starClasses[1];
+						switch (starNumber) {
+							case "yell-star-1": $('.yell-stars-text').html('1 балл'); break;
+							case "yell-star-2": $('.yell-stars-text').html('2 балла'); break;
+							case "yell-star-3": $('.yell-stars-text').html('3 балла'); break;
+							case "yell-star-4": $('.yell-stars-text').html('4 балла'); break;
+							case "yell-star-5": $('.yell-stars-text').html('5 баллов'); break;
+							default: $('.yell-stars-text div').html('1 балл');
+						}
+					} else{
+						$('.yell-stars-text div').html('1 балл');
+					};
 			});
-	</script>
+			$('.yell-star').click(
+				function() {
+					$('.yell-star').removeClass('yell-choosen');
+					$(this).addClass('yell-choosen');
+					$(this).prevAll().addClass('yell-choosen');
+					var starClasses = $(this).attr('class').split(" ");
+					var starNumber = starClasses[1];
+					switch (starNumber) {
+						case "yell-star-1": $('.yell-stars-text').html('1 балл'); break;
+						case "yell-star-2": $('.yell-stars-text').html('2 балла'); break;
+						case "yell-star-3": $('.yell-stars-text').html('3 балла'); break;
+						case "yell-star-4": $('.yell-stars-text').html('4 балла'); break;
+						case "yell-star-5": $('.yell-stars-text').html('5 баллов'); break;
+						default: $('.yell-stars-text').html('1 балл');
+					}
+				});
+			});
+			</script>
+		</div>
+	</div><!-- end of .yell_widget -->
 </body>
 </html>
